@@ -1,5 +1,4 @@
 require_relative 'employee'
-require_relative 'salaried_employee'
 
 
 class HourlyEmployee < Employee
@@ -43,11 +42,5 @@ class HourlyEmployee < Employee
     formatted_pay = format("$%.2f", pay_for_period)
     puts "Pay This Period: #{formatted_pay}"
   end
-end
 
-jane = SalariedEmployee.new("Jane Doe", 50000)
-jane.print_pay_stub
-angela = HourlyEmployee.security_guard("Angela Matthews")
-ivan = HourlyEmployee.cashier("Ivan Stokes")
-angela.print_pay_stub
-ivan.print_pay_stub
+end

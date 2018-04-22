@@ -1,4 +1,6 @@
 require_relative 'employee'
+
+
 class SalariedEmployee < Employee
   attr_reader :salary
 
@@ -22,3 +24,5 @@ class SalariedEmployee < Employee
     puts "Pay This Period: #{formatted_pay}"
   end
 end
+
+
