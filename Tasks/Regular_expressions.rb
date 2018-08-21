@@ -14,9 +14,19 @@ p is_valid_ip_address?("172.131.255.255") ? "valid" : "invalid"
 p is_valid_ip_address?("172.31.255.256") ? "valid" : "invalid"
 p '~' * 120
 
+VALID_EMAIL_REGEX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
+
+def is_valid_email? email
+  email =~ VALID_EMAIL_REGEX
+end
+
+puts is_valid_email?("jordan@hudgens.com") ? 'Valid' : 'Invalid'
+puts is_valid_email?("jordan@hudgens.com") ? 'Valid' : 'Invalid'
+p '~' * 120
+
 # /i modifier (ignores case of [a-zA-Z])
 regex = /^[a-z0-9]+@[a-z0-9]+\.[a-z]+$/i
-string = 'Install@gmail.com'
+string = 'Install@Gmail.Com'
 p string =~ regex ? "Valid : #{string}" : "Invalid Mail"
 
 
@@ -27,6 +37,7 @@ p s =~ r ? "Valid : #{s}" : "Invalid Mail"
 def split_into_words(str)
   str.split(/(?=[A-Z])/)
 end
+
 puts split_into_words("camelCasingTestFooBar")
       .map {|x| x.downcase}
       .join('*')
